@@ -3,10 +3,11 @@ package com.learning.reactive.programming.streaming.dto;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
+import java.util.UUID;
+
 @Data
 @AllArgsConstructor
-public class ProductDTO {
-    private Integer id;
-    private String description;
-    private int price;
+public class UploadResponse {
+    private UUID confirmationId;
+    private Long productsCount;
 }

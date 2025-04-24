@@ -23,4 +23,10 @@ public class ProductService {
     public Mono<Long> getProductsCount() {
         return this.productRepository.count();
     }
+
+    public Flux<ProductDTO> allProducts() {
+        return this.productRepository.findAll()
+                .map(EntityDtoMapper::toDto);
+    }
 }
+

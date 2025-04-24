@@ -34,4 +34,14 @@ public class ProductsUploadDownloadTest {
                 .expectComplete()
                 .verify();
     }
+
+    @Test
+    public void download() {
+        this.productClient.downloadProducts()
+                .doOnNext(r -> logger.info("Received: {}", r))
+                .then()
+                .as(StepVerifier::create)
+                .expectComplete()
+                .verify();
+    }
 }
